@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Results.css'
 import SoftwareItem from './SoftwareItem'
 
 class Results extends Component {
@@ -14,15 +13,14 @@ class Results extends Component {
     return (
       <div className="Results">
         <p>Showing {this.props.meta.offset+1|0}-{this.props.meta.offset + this.props.meta.limit|0} of {this.props.meta.total_count|0} results.</p>
-        <table>
-          <thead>
+        <table class="table table-striped table-sm">
+          <thead class="thead-light">
             <tr>
               <th>ID</th>
               <th>Category</th>
               <th>Manufacturer</th>
-              <th>Brand</th>
               <th>Product</th>
-              <th>Major version</th>
+              <th>Version group</th>
               <th>Specific version</th>
             </tr>
             </thead>

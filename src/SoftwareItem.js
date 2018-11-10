@@ -8,7 +8,6 @@ class SoftwareItem extends Component {
         <td>{id}</td>
         <td>{category}</td>
         <td>{manufacturer}</td>
-        <td>{brand_family}</td>
         <td>{product_name}</td>
         <td>{version_group}</td>
         <td>{version}</td>

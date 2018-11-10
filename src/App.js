@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import './App.css';
 import Search from './Search'
 import Results from './Results'
 
@@ -29,10 +27,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Technopedia Search</h1>
+          <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Technopedia Search</span>
+            <Search changeData={this.changeData}/>
+          </nav>
         </header>
-
-        <Search changeData={this.changeData}/>
 
         <Results data={this.state.data} meta={this.state.meta}/>
       </div>

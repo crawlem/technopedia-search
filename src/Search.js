@@ -18,7 +18,7 @@ class Search extends Component {
   search(e) {
     e.preventDefault()
 
-    http.get(window.softwareApiUrl + '&manufacturer__istartswith=' + this.state.manufacturer + '&product_name__icontains=' + this.state.product, {'headers': {'Authorization': 'apikey S65620180226:39dec62aa2dfeed16d22a1d0e18f937c4f10774b' }}).then(res => {
+    http.get(window.softwareApiUrl + '&manufacturer__istartswith=' + this.state.manufacturer + '&product_name__icontains=' + this.state.product, {'headers': {'Authorization': 'apikey ' + window.apiUser + ':' + window.apiKey }}).then(res => {
       this.props.changeData(res.data.software_extended_list, res.data.meta)
     })
   }
@@ -37,13 +37,11 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="Search">
-        <form onSubmit={this.search}>
-          <label><input type="text" placeholder="Manufacturer name" value={this.state.manufacturer} onChange={this.changeManufacturer}/></label>
-          <label><input type="text" placeholder="Product name" value={this.state.product} onChange={this.changeProduct}/></label>
-          <button type="submit">Search</button>
-        </form>
-      </div>
+      <form className="Search form-inline" onSubmit={this.search}>
+        <label><input class="form-control mr-sm-2" type="text" placeholder="Manufacturer" value={this.state.manufacturer} onChange={this.changeManufacturer}/></label>
+        <label><input class="form-control mr-sm-2" type="text" placeholder="Product" value={this.state.product} onChange={this.changeProduct}/></label>
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+      </form>
     );
   }
 }
