@@ -1,0 +1,12 @@
+.Results table {
+	border-collapse: collapse;
+}
+
+.Results table, .Results th, .Results td {
+    border: 1px solid black;
+    padding: .3em;
+}
+
+.Results th {
+	background-color: #ccc;
+}

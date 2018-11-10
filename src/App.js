@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Search from './Search'
+import Results from './Results'
+
+window.apiUser = 'S65620180226'
+window.apiKey = '39dec62aa2dfeed16d22a1d0e18f937c4f10774b'
+window.softwareApiUrl = 'https://api.technopedia.com/api/v1/software_extended/?limit=50'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: [],
+      meta: ''
+    }
+    this.changeData = this.changeData.bind(this)
+  }
+
+  changeData(newData, newMeta) {
+    this.setState({
+      data: newData,
+      meta: newMeta
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Technopedia Search</h1>
         </header>
+
+        <Search changeData={this.changeData}/>
+
+        <Results data={this.state.data} meta={this.state.meta}/>
       </div>
     );
   }
