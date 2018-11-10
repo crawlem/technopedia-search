@@ -13,8 +13,8 @@ class Results extends Component {
     return (
       <div className="Results">
         <p>Showing {this.props.meta.offset+1|0}-{this.props.meta.offset + this.props.meta.limit|0} of {this.props.meta.total_count|0} results.</p>
-        <table class="table table-striped table-sm">
-          <thead class="thead-light">
+        <table className="table table-striped table-sm">
+          <thead className="thead-light">
             <tr>
               <th>ID</th>
               <th>Category</th>
@@ -28,6 +28,16 @@ class Results extends Component {
             {softwareItems}
           </tbody>
         </table>
+
+        <nav>
+          <ul className="pagination pagination-sm">
+            <li className="page-item"><a className="page-link" href="#">Previous</a></li>
+            <li className="page-item"><a className="page-link" href="#">1</a></li>
+            <li className="page-item"><a className="page-link" href="#">2</a></li>
+            <li className="page-item"><a className="page-link" href="#">3</a></li>
+            <li className="page-item"><a className="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
       </div>
     );
   }

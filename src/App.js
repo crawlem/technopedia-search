@@ -27,8 +27,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1">Technopedia Search</span>
+          <nav className="navbar navbar-light bg-light">
+            <span className="navbar-brand mb-0 h1">Technopedia Search</span>
             <Search changeData={this.changeData}/>
           </nav>
         </header>

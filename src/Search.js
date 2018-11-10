@@ -38,9 +38,9 @@ class Search extends Component {
   render() {
     return (
       <form className="Search form-inline" onSubmit={this.search}>
-        <label><input class="form-control mr-sm-2" type="text" placeholder="Manufacturer" value={this.state.manufacturer} onChange={this.changeManufacturer}/></label>
-        <label><input class="form-control mr-sm-2" type="text" placeholder="Product" value={this.state.product} onChange={this.changeProduct}/></label>
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+        <label><input className="form-control mr-sm-2" type="text" placeholder="Manufacturer" value={this.state.manufacturer} onChange={this.changeManufacturer}/></label>
+        <label><input className="form-control mr-sm-2" type="text" placeholder="Product" value={this.state.product} onChange={this.changeProduct}/></label>
+        <button className="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
       </form>
     );
   }
