@@ -24,6 +24,14 @@ class App extends Component {
   }
 
   render() {
+    let results;
+
+    if (this.state.meta != '') {
+      results = <Results data={this.state.data} meta={this.state.meta}/>;
+    } else {
+      results = '';
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -33,7 +41,7 @@ class App extends Component {
           </nav>
         </header>
 
-        <Results data={this.state.data} meta={this.state.meta}/>
+        {results}
       </div>
     );
   }
