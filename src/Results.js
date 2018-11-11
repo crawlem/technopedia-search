@@ -17,7 +17,7 @@ class Results extends Component {
           <thead className="thead-light">
             <tr>
               <th>ID</th>
-              <th>Category</th>
+              <th className="d-none d-sm-table-cell">Category</th>
               <th>Manufacturer</th>
               <th>Product</th>
               <th>Version group</th>

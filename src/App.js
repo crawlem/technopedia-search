@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     let results;
 
-    if (this.state.meta != '') {
+    if (this.state.meta !== '') {
       results = <Results data={this.state.data} meta={this.state.meta}/>;
     } else {
       results = '';
