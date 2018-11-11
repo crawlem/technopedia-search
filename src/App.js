@@ -41,6 +41,11 @@ class App extends Component {
           </nav>
         </header>
 
+        <div className="jumbotron">
+          <h1 className="display-5">Get started</h1>
+          <p className="lead">Search Technopedia software and hardware by manufacturer, product or both.</p>
+        </div>
+
         {results}
       </div>
     );

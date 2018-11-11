@@ -40,6 +40,8 @@ class Search extends Component {
       <form className="Search form-inline" onSubmit={this.search}>
         <label><input className="form-control mr-sm-2" type="text" placeholder="Manufacturer" value={this.state.manufacturer} onChange={this.changeManufacturer}/></label>
         <label><input className="form-control mr-sm-2" type="text" placeholder="Product" value={this.state.product} onChange={this.changeProduct}/></label>
+        <label className="form-check form-check-inline"><input className="form-check-input" type="checkbox" defaultChecked/>Software</label>
+        <label className="form-check form-check-inline"><input className="form-check-input" type="checkbox"/>Hardware</label>
         <button className="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
       </form>
     );
