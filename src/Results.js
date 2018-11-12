@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import SoftwareItem from './SoftwareItem'
 
 class Results extends Component {
@@ -7,19 +9,8 @@ class Results extends Component {
       return <SoftwareItem key={software.id} software={software}/>
     })
 
-    // Pagination info
-    const pageLimit = this.props.meta.limit
-    const resultCount = this.props.meta.total_count
-    const pageCount = Math.ceil(this.props.meta.total_count / pageLimit)
-    const currentPage = (this.props.meta.offset / pageLimit) + 1
-    
-    // Result summary info
-    const firstRow = this.props.meta.offset + 1
-    const lastRow = Math.min(this.props.meta.offset + pageLimit, resultCount)
-
     return (
-      <div className="Results">
-        <p>Showing {firstRow}-{lastRow} of {resultCount} results.</p>
+      <div className="Results container-fluid">
         <table className="table table-striped table-sm">
           <thead className="thead-light">
             <tr>
@@ -35,18 +26,14 @@ class Results extends Component {
             {softwareItems}
           </tbody>
         </table>
-
-        <nav>
-          {currentPage} / {pageCount}
-          <ul className="pagination pagination-sm">
-            <li className="page-item"><a className="page-link" href="#">1</a></li>
-            <li className="page-item"><a className="page-link" href="#">2</a></li>
-            <li className="page-item"><a className="page-link" href="#">3</a></li>
-          </ul>
-        </nav>
       </div>
     );
   }
 }
+
+// This class expects these properties
+Results.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default Results;
