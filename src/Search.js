@@ -40,7 +40,7 @@ class Search extends Component {
   searchHandler(e) {
     e.preventDefault()
     const history = createBrowserHistory()
-    history.push('/?manufacturer=' + this.state.manufacturer + '&product=' + this.state.product + '&offset=' + this.state.offset)
+    history.push('/?manufacturer=' + this.state.manufacturer + '&product=' + this.state.product)
     this.search()
   }
 
