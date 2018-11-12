@@ -121,7 +121,7 @@ class App extends Component {
 
         <div className="container-fluid">
           <Pagination totalRecords={totalRecords} pageLimit={50} pageNeighbours={2} onPageChanged={this.onPageChanged} />
-          {totalRecords > 0 &&
+          {(this.state.manufacturer !== '' || this.state.product !== '') &&
             <p>{firstRow}-{lastRow} of {this.state.resultCount} results</p>
           }
         </div>
