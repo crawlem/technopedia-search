@@ -9,6 +9,10 @@ class Results extends Component {
       return <SoftwareItem key={software.id} software={software}/>
     })
 
+    if (!softwareItems.length > 0) {
+      return ('');
+    }
+
     return (
       <div className="Results container-fluid">
         <table className="table table-striped table-sm">
