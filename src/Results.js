@@ -4,7 +4,7 @@ import SoftwareItem from './SoftwareItem'
 class Results extends Component {
   render() {
     const softwareItems = this.props.data.map(software => {
-      return <SoftwareItem software={software}/>
+      return <SoftwareItem key={software.id} software={software}/>
     })
 
     return (

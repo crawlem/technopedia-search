@@ -36,14 +36,15 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <nav className="navbar navbar-light bg-light">
-            <span className="navbar-brand mb-0 h1">Technopedia Search</span>
-            <Search changeData={this.changeData}/>
+            <span className="navbar-brand mb-0 h1"><i className="fas fa-database"></i> Technopedia Search</span>
           </nav>
         </header>
 
         <div className="jumbotron">
           <h1 className="display-5">Get started</h1>
           <p className="lead">Search Technopedia software and hardware by manufacturer, product or both.</p>
+          <hr/>
+          <Search changeData={this.changeData}/>
         </div>
 
         {results}
