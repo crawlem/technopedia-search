@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import http from 'axios'
+import { createBrowserHistory } from "history";
 
 class Search extends Component {
   constructor(props) {
@@ -21,8 +22,11 @@ class Search extends Component {
 
   search() {
     if (this.state.manufacturer !== '' || this.state.product !== '') {
-      http.get(window.softwareApiUrl + '&manufacturer__istartswith=' + this.state.manufacturer + '&product_name__icontains=' + this.state.product, {'headers': {'Authorization': 'apikey ' + window.apiUser + ':' + window.apiKey }}).then(res => {
+      http.get(window.softwareApiUrl + '&offset=' + this.state.offset + '&manufacturer__istartswith=' + this.state.manufacturer + '&product_name__icontains=' + this.state.product, {'headers': {'Authorization': 'apikey ' + window.apiUser + ':' + window.apiKey }}).then(res => {
         this.props.changeData(res.data.software_extended_list, res.data.meta)
+        this.setState({
+          offset: res.data.meta.offset
+        })
       })
     }
   }
@@ -35,6 +39,8 @@ class Search extends Component {
 
   searchHandler(e) {
     e.preventDefault()
+    const history = createBrowserHistory()
+    history.push('/?manufacturer=' + this.state.manufacturer + '&product=' + this.state.product + '&offset=' + this.state.offset)
     this.search()
   }
 

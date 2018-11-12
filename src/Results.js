@@ -7,6 +7,8 @@ class Results extends Component {
       return <SoftwareItem key={software.id} software={software}/>
     })
 
+    const pageCount = Math.ceil(this.props.meta.total_count / this.props.meta.limit)
+
     return (
       <div className="Results">
         <p>Showing {this.props.meta.offset+1|0}-{this.props.meta.offset + this.props.meta.limit|0} of {this.props.meta.total_count|0} results.</p>
@@ -27,6 +29,7 @@ class Results extends Component {
         </table>
 
         <nav>
+          {pageCount}
           <ul className="pagination pagination-sm">
             <li className="page-item"><a className="page-link" href="#">Previous</a></li>
             <li className="page-item"><a className="page-link" href="#">1</a></li>
