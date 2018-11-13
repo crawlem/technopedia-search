@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SoftwareItem extends Component {
   render() {
@@ -15,5 +16,10 @@ class SoftwareItem extends Component {
     );
   }
 }
+
+// This class expects these properties
+SoftwareItem.propTypes = {
+  software: PropTypes.object.isRequired
+};
 
 export default SoftwareItem;
