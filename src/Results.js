@@ -30,9 +30,15 @@ class Results extends Component {
               <th>Manufacturer</th>
               <th>Product</th>
               {this.props.type === 'software' &&
+                <th>Edition</th>
+              }
+              {this.props.type === 'software' &&
                 <th>Version group</th>
               }
               <th>{modelColName}</th>
+              {this.props.type === 'software' &&
+                <th>Patch</th>
+              }
             </tr>
             </thead>
           <tbody>
