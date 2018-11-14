@@ -141,7 +141,6 @@ class App extends Component {
   render() {
     const firstRow = this.state.offset + 1
     const lastRow = Math.min(this.state.offset + this.state.pageLimit, this.state.resultCount)
-    const totalRecords = this.state.resultCount
 
     return (
       <div className="App">
@@ -179,7 +178,7 @@ class App extends Component {
         <Results type={this.state.type} data={this.state.data} />
 
         <div className="container-fluid">
-          <Pagination totalRecords={totalRecords} pageLimit={50} pageNeighbours={2} onPageChanged={this.onPageChanged} />
+          <Pagination currentPage={(this.state.offset / this.state.pageLimit) + 1} totalRecords={this.state.resultCount} pageLimit={50} pageNeighbours={2} onPageChanged={this.onPageChanged} />
           {(this.state.meta !== '') &&
             <p>{firstRow}-{lastRow} of {this.state.resultCount} results</p>
           }
