@@ -47,6 +47,17 @@ class App extends Component {
     this.search(this.state.offset)
   }
 
+  pushToHistory(urlParams){
+    const url = window.location.href
+    //starting on the 8th character after "http://" or "https://", find '/'
+    const startChar = url.indexOf('/', 8)
+    const path = url.substr(startChar, url.length).split('?')[0]
+    console.log("path=" + path)
+
+    const history = createBrowserHistory()
+    history.push(path + '?' + urlParams)
+  }
+
   searchSoftware(offset) {
     console.log('Software search: [' + this.state.manufacturer + '] [' + this.state.product + ']')
 
@@ -65,8 +76,7 @@ class App extends Component {
         })
 
       // Change the URL so we can e.g. favourite link to search results
-      const history = createBrowserHistory()
-      history.push('/?type=software&manufacturer=' + this.state.manufacturer + '&product=' + this.state.product + '&offset=' + offset)
+      this.pushToHistory('type=software&manufacturer=' + this.state.manufacturer + '&product=' + this.state.product + '&offset=' + offset)
     } else {
       console.log('Empty software manufacturer and product search keys')
     }
@@ -90,8 +100,7 @@ class App extends Component {
         })
 
       // Change the URL so we can e.g. favourite link to search results
-      const history = createBrowserHistory()
-      history.push('/?type=hardware&manufacturer=' + this.state.manufacturer + '&product=' + this.state.product + '&offset=' + offset)
+      this.pushToHistory('type=hardware&manufacturer=' + this.state.manufacturer + '&product=' + this.state.product + '&offset=' + offset)
     } else {
       console.log('Empty hardware manufacturer and product search keys')
     }
