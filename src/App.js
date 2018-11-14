@@ -7,7 +7,7 @@ import Pagination from './Pagination'
 
 window.apiUser = 'S65620180226'
 window.apiKey = '39dec62aa2dfeed16d22a1d0e18f937c4f10774b'
-window.softwareApiUrl = 'https://api.technopedia.com/api/v1/software_extended/?limit=50'
+window.softwareApiUrl = 'https://api.technopedia.com/api/v1/software_extended/?limit=50&order_by=-version_order'
 window.hardwareApiUrl = 'https://api.technopedia.com/api/v1/hardware_extended/?limit=50'
 
 class App extends Component {
