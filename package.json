@@ -10,7 +10,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.6.1",
     "react-scripts": "3.0.0",
-    "snyk": "^1.217.3"
+    "snyk": "^1.258.2"
   },
   "scripts": {
     "start": "react-scripts start",
