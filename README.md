@@ -30,7 +30,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 GitHub actions are configured to deploy on each PR and merge to master.
 
-Or you can manually generate and deploy as follows:
+Or you can manually generate the static site locally and deploy it:
 
 ```bash
 npm run generate
